@@ -1,0 +1,27 @@
+{
+  "name": "channel-hub",
+  "version": "0.1.0",
+  "description": "Local, self-hosted hub that connects your publishing accounts (YouTube first) once, so any app or AI assistant on your machine can publish to them.",
+  "license": "MIT",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "bin": {
+    "channel-hub": "dist/cli.js",
+    "channel-hub-mcp": "dist/mcp.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "tsc && node --test --test-concurrency=1 test/*.test.mjs",
+    "start": "node dist/cli.js start",
+    "mcp": "node dist/mcp.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.2",
+    "typescript": "^7.0.2"
+  }
+}
